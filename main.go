@@ -9,7 +9,7 @@ import (
 )
 
 const Name = "k8s-deployment-demo"
-const Version = "0.1"
+const Version = "0.2"
 
 type Response struct {
 	Version     string
