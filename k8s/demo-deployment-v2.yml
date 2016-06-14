@@ -1,0 +1,27 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: k8s-deployment-demo-deployment
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: k8s-deployment-demo
+  minReadySeconds: 10
+  template:
+    metadata:
+      labels:
+        app: k8s-deployment-demo
+        version: v0.2
+    spec:
+      containers:
+        - name: k8s-deployment-demo
+          image: ryane/k8s-deployment-demo:0.2
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8081
+              protocol: TCP
+          env:
+            - name: DEMO_ENV
+              value: production
