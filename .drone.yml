@@ -1,0 +1,7 @@
+workspace:
+  base: /go
+pipeline:
+  build:
+    image: golang:1.6
+    commands:
+      - go test -v
