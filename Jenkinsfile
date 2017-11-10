@@ -1,9 +1,10 @@
-podTemplate(label: 'golang', containers: [
-        containerTemplate(name: 'golang', image: 'golang:1.9.2', ttyEnabled: true, command: 'cat')
-    ]) {
-    node('golang') {
-        pipeline {
-            agent any
+pipeline {
+    agent any
+
+    podTemplate(label: 'golang', containers: [
+            containerTemplate(name: 'golang', image: 'golang:1.9.2', ttyEnabled: true, command: 'cat')
+        ]) {
+        node('golang') {
 
             stages {
                 stage('Build') {
