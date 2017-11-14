@@ -18,4 +18,3 @@ podTemplate(label: 'golang', containers: [
         }
     }
 }
-}
