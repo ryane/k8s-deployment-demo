@@ -1,5 +1,5 @@
 podTemplate(label: 'golang', containers: [
-        containerTemplate(name: 'golang', image: 'golang:1.9.2', ttyEnabled: true, command: 'cat')
+        containerTemplate(name: 'golang', image: 'golang:1.9.2', ttyEnabled: true, command: 'cat', workingDir: '/home/jenkins')
     ]) {
     node('golang') {
         stage('Build') {
