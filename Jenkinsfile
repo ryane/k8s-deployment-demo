@@ -1,8 +1,9 @@
 podTemplate(label: 'golang', containers: [
-        containerTemplate(name: 'golang', image: 'golang:1.9.2', ttyEnabled: true, command: 'cat', workingDir: '/home/jenkins')
+        containerTemplate(name: 'golang', image: 'golang:1.9.2', ttyEnabled: true, command: 'cat')
     ]) {
     node('golang') {
         stage('Build') {
+            checkout scm
             sh("echo 'Build phase'")
             sh("pwd")
             sh("ls -al")
